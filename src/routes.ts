@@ -1,15 +1,17 @@
 import AboutVue from "./components/AboutVue.vue";
 import HelloWorld from "./components/HelloWorld.vue";
 import MenuPrincipal from "./components/menuPrincipal/index.vue";
-import SuiviDeLhumeur from "./components/suiviDeLhumeur/index.vue";
+import SuiviDeLhumeur from "./components/suiviDeLhumeur/affichageSuiviDeLhumeur.vue";
 
 export const PAGE_NAME = {
     ABOUT: "a propos",
     HOME: "accueil",
     MOOD: "suivi humeur",
+    ADD_MOOD: "Ajout d'humeur",
 }
 
 import * as VueRouter from 'vue-router';
+import SaisieSuiviDeLhumeur from "./components/suiviDeLhumeur/SaisieSuiviDeLhumeur.vue";
 const defaultComponent = {
     header: {
         ...MenuPrincipal,
@@ -38,6 +40,14 @@ const routes = [
         components: {
             ...defaultComponent,
             main: SuiviDeLhumeur
+        }
+    },
+    {
+        path: '/ajout-humeur',
+        name:PAGE_NAME.ADD_MOOD,
+        components: {
+            ...defaultComponent,
+            main: SaisieSuiviDeLhumeur
         }
     },
 ]
