@@ -24,8 +24,9 @@ En tant que professionnel de la santé ou personne souhaitant réaliser un retou
 ### Architecture
 ### Globaux
 Le front est réalisé en vueJs. Ce choix a été réalisé par préférence personnelle de développement pour le côté two way binding simplifié.
+Vitejs est utilisé pour générer le projet et Volta est utilisé pour maintenir la version de node et yarn à jour.
 ### API
-pour le moment, les données potentiellement stockées étant des données de santés, aucune API n'est développée.
+Pour le moment, les données potentiellement stockées étant des données de santés, aucune API n'est développée.
 Ce choix pourrait être remis en question dans le futur selon les fonctionnalités prévues ou les moyens de chiffrement à mettre en place.
 Le projet étant open source et portée par une seule personne actuellement, je ne suis pas en mesure de mener un plan d'action efficace sur des données sensibles conformes au RGPD (et ne préfère pas prendre ce risque même si à première vue on ne peut pas associer les données à une personne).
 
