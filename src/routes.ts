@@ -1,10 +1,12 @@
 import AboutVue from "./components/AboutVue.vue";
 import HelloWorld from "./components/HelloWorld.vue";
 import MenuPrincipal from "./components/menuPrincipal/index.vue";
+import SuiviDeLhumeur from "./components/suiviDeLhumeur/index.vue";
 
 export const PAGE_NAME = {
     ABOUT: "a propos",
-    HOME: "accueil"
+    HOME: "accueil",
+    MOOD: "suivi humeur",
 }
 
 import * as VueRouter from 'vue-router';
@@ -28,6 +30,14 @@ const routes = [
         components: {
             ...defaultComponent,
             main: AboutVue
+        }
+    },
+    {
+        path: '/humeur',
+        name:PAGE_NAME.MOOD,
+        components: {
+            ...defaultComponent,
+            main: SuiviDeLhumeur
         }
     },
 ]

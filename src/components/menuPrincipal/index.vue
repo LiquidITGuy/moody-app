@@ -1,10 +1,11 @@
 <script setup lang="ts">
 
-import {PAGE_NAME} from "../../routes.ts";
+import {PAGE_NAME} from "../../routes";
 
 const liens = [
   {display:"accueil", link: {name: PAGE_NAME.HOME}},
   {display:"À propos", link: {name: PAGE_NAME.ABOUT}},
+  {display:"Affichage de l'humeur", link: {name: PAGE_NAME.MOOD}},
 ]
 </script>
 

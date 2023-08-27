@@ -3,7 +3,6 @@
 
 <template>
   <main>
-
   <header>
     <router-view name="header"></router-view>
   </header>
