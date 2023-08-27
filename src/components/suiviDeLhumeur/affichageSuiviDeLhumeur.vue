@@ -47,7 +47,7 @@ const options = {
 </script>
 
 <template>
-  <div>Moody app</div>
+  <div v-if="services.mood.isByDefault">Données d'exemple</div>
   <Line
   :options="options"
   :data="chartData"/>
