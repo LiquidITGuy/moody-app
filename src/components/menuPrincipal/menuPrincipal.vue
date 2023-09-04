@@ -29,4 +29,8 @@ const liens = [
 .read-the-docs {
   color: #888;
 }
+li {
+	display: inline-block;
+	margin: 0 1em;
+}
 </style>
