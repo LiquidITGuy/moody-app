@@ -1,4 +1,4 @@
-import AboutVue from './components/AboutVue.vue'
+import AboutVue from './components/aboutVue.vue'
 import HelloWorld from './components/HelloWorld.vue'
 import MenuPrincipal from './components/menuPrincipal/menuPrincipal.vue'
 import SuiviDeLhumeur from './components/suiviDeLhumeur/affichageSuiviDeLhumeur.vue'

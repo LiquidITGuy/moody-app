@@ -39,9 +39,8 @@ const chartData = {
 			label: 'neutre',
 			data: mood.map(() => 0),
 			borderColor: '#777',
-			pointStyle: false,
+			pointStyle: 'cross',
 		},
-
 	]
 }
 const options = {

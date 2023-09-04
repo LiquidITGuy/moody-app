@@ -2,6 +2,7 @@
 import services from '../../service'
 
 const saisie = (formulaire: Event) => {
+	// @ts-ignore
 	services.mood.ajouteMood(formulaire.target[0].value)
 }
 </script>
