@@ -3,11 +3,11 @@
 
 <template>
   <main>
-  <header>
-    <router-view name="header"></router-view>
-  </header>
-  <router-view name="left"></router-view>
-  <router-view name="main"></router-view>
+    <header>
+      <router-view name="header" />
+    </header>
+    <router-view name="left" />
+    <router-view name="main" />
   </main>
 </template>
 

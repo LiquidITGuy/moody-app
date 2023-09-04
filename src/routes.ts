@@ -1,6 +1,6 @@
 import AboutVue from './components/AboutVue.vue'
 import HelloWorld from './components/HelloWorld.vue'
-import MenuPrincipal from './components/menuPrincipal/index.vue'
+import MenuPrincipal from './components/menuPrincipal/menuPrincipal.vue'
 import SuiviDeLhumeur from './components/suiviDeLhumeur/affichageSuiviDeLhumeur.vue'
 
 export const PAGE_NAME = {
