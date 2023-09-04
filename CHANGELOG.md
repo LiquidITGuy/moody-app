@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/LiquidITGuy/moody-app/compare/v1.0.0...v1.1.0) (2023-09-04)
+
+
+### Features
+
+* **humeur:** ajout de lu zero sur le graphe ([6dc67e8](https://github.com/LiquidITGuy/moody-app/commit/6dc67e8740072eca7dbde825ade6321085c5dc77))
+
 ## 1.0.0 (2023-08-27)
 
 
