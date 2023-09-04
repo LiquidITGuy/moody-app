@@ -25,7 +25,7 @@ export class MoodService {
 			this.isByDefault = true
 		}
 		else {
-			this.mood = JSON.parse(localStorage).map((mood) => ({
+			this.mood = JSON.parse(localStorage).map(( mood: {date: string, mood: number} ) => ({
 				date: new Date(mood.date),
 				mood: mood.mood,
 			}))

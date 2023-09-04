@@ -31,18 +31,28 @@ const chartData = {
 			data: mood.map(mood => mood.mood),
 			backgroundColor: '#ff7979',
 			borderColor: '#aa7979',
+			pointStyle: 'circle',
+			pointRadius: 10,
+			pointHoverRadius: 15
 		},
+		{
+			label: 'neutre',
+			data: mood.map(() => 0),
+			borderColor: '#777',
+			pointStyle: false,
+		},
+
 	]
 }
 const options = {
 	responsive: true,
 	scales: {
 		y: {
-			min: -5.1,
-			max: 5.1,
+			min: -5,
+			max: 5,
 		}
 	},
-	tension: 0.5
+	tension: 0.5,
 }
 </script>
 
