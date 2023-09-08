@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { ref } from 'vue'
+
 import {
 	Chart as ChartJS,
 	CategoryScale,
@@ -11,6 +13,7 @@ import {
 } from 'chart.js'
 import { Line } from 'vue-chartjs'
 import services from '../../service'
+import service from "../../service";
 ChartJS.register(
 	CategoryScale,
 	LinearScale,
@@ -53,16 +56,32 @@ const options = {
 	},
 	tension: 0.5,
 }
+
+const uploadedFile = ref<HTMLInputElement>()
+const importValue = async () => {
+	if (uploadedFile && uploadedFile.value && uploadedFile.value.files) {
+		const resultat = await services.writer.read(uploadedFile.value.files[0])
+		services.mood.fusionneMood(resultat)
+	}
+}
+const exportValue = () => {
+	services.writer.save(mood, "mood.json")
+}
 </script>
 
 <template>
   <div v-if="services.mood.isByDefault">
     Données d'exemple
+	  <form  @submit="importValue">
+	    <input type="file" ref="uploadedFile" accept="application/json" required/>
+	    <button>importer les données d'un autre appareil</button>
+	  </form>
   </div>
   <Line
     :options="options"
     :data="chartData"
   />
+	<button @click="exportValue" v-if="!services.mood.isByDefault">Exporter les données</button> <br>
 </template>
 
 <style scoped>

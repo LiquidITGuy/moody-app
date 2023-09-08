@@ -1,4 +1,13 @@
-const MOOD_PAR_DEFAUT_SI_NON_REMPLI = [
+type mood = {
+	date: Date,
+	mood: number,
+}
+type moodHtml = {
+	date: string,
+	mood: number,
+}
+
+const MOOD_PAR_DEFAUT_SI_NON_REMPLI : Array<mood> = [
 	{date: new Date('01/01/2023'), mood: 3},
 	{date: new Date('01/02/2023'), mood: 2},
 	{date: new Date('01/03/2023'), mood: 4},
@@ -16,7 +25,7 @@ const MOOD_PAR_DEFAUT_SI_NON_REMPLI = [
 ]
 
 export class MoodService {
-	private mood: Array<{ date: Date, mood: number }>
+	private mood: Array<mood>
 	public isByDefault: boolean = false
 	constructor() {
 		const localStorage = window.localStorage.getItem('mood')
@@ -25,13 +34,14 @@ export class MoodService {
 			this.isByDefault = true
 		}
 		else {
-			this.mood = JSON.parse(localStorage).map(( mood: {date: string, mood: number} ) => ({
-				date: new Date(mood.date),
-				mood: mood.mood,
-			}))
+			this.mood = JSON.parse(localStorage)
+				.map(( mood: moodHtml ) => ({
+					date: new Date(mood.date),
+					mood: mood.mood,
+				}))
 		}
 	}
-	getMood(): Array<{ date: Date, mood: number }>{
+	getMood(): Array<mood>{
 		return this.mood
 	}
 	ajouteMood(mood: number): void{
@@ -42,5 +52,17 @@ export class MoodService {
 		this.mood.push({date: new Date(), mood })
 		window.localStorage.setItem('mood', JSON.stringify(this.mood))
 	}
-
+	fusionneMood(listeMood: Array<moodHtml>) {
+		if(this.isByDefault) {
+			this.mood = []
+			this.isByDefault = false
+		}
+		const cloneMood = [...this.mood]
+		listeMood.forEach((mood) => {
+			cloneMood.push({date: new Date(mood.date), mood: mood.mood})
+		})
+		cloneMood.sort((moodA: mood, moodB: mood) => moodA.date.getTime()-moodB.date.getTime())
+		this.mood = cloneMood
+		window.localStorage.setItem('mood', JSON.stringify(this.mood))
+	}
 }
